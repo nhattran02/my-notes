@@ -1,0 +1,56 @@
+site_name: My Notes
+site_url: https://nhattran02.github.io/my-notes
+
+repo_name: nhattran02/my-notes
+repo_url: https://github.com/nhattran02/my-notes
+
+theme:
+  name: material
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+  language: en
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - toc:
+      permalink: true
+
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+
+  - Linux:
+      - linux/index.md
+
+  - Renesas:
+      - renesas/index.md

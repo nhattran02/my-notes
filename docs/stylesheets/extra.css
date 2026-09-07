@@ -1,0 +1,240 @@
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+[data-md-color-scheme="default"] {
+  /* Primary */
+  --md-primary-fg-color: #f3f4f6;
+  --md-primary-fg-color--light: #ffffff;
+  --md-primary-fg-color--dark: #e5e7eb;
+
+  /* Text on primary */
+  --md-primary-bg-color: #212121;
+  --md-primary-bg-color--light: #424242;
+
+  /* Accent */
+  --md-accent-fg-color: #212121;
+
+  /* Page */
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color: #212121;
+  --md-default-fg-color--light: #555555;
+}
+
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="default"] .md-header {
+  background-color: #f3f4f6;
+  color: #212121;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Header links / icons */
+
+[data-md-color-scheme="default"] .md-header__button,
+[data-md-color-scheme="default"] .md-header__title,
+[data-md-color-scheme="default"] .md-header__topic {
+  color: #212121;
+}
+
+
+/* ---------------------------------------------------------
+   Navigation tabs
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #f3f4f6;
+  color: #212121;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+[data-md-color-scheme="default"] .md-tabs__link {
+  color: #555555;
+}
+
+
+[data-md-color-scheme="default"] .md-tabs__link--active {
+  color: #000000;
+}
+
+
+/* ---------------------------------------------------------
+   Search
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="default"] .md-search__form {
+  background-color: #ffffff;
+}
+
+
+[data-md-color-scheme="default"] .md-search__input {
+  color: #212121;
+}
+
+
+[data-md-color-scheme="default"] .md-search__icon {
+  color: #555555;
+}
+
+
+/* ---------------------------------------------------------
+   Sidebar
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="default"] .md-sidebar {
+  background-color: #fafafa;
+}
+
+
+[data-md-color-scheme="default"] .md-nav__link {
+  color: #555555;
+}
+
+
+[data-md-color-scheme="default"] .md-nav__link--active {
+  color: #212121;
+}
+
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="default"] .md-typeset a {
+  color: #333333;
+}
+
+
+/* ---------------------------------------------------------
+   Main content
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="default"] .md-main {
+  bakground-color: #ffffff;
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+[data-md-color-scheme="slate"] {
+  /* Primary */
+  --md-primary-fg-color: #252525;
+  --md-primary-fg-color--light: #333333;
+  --md-primary-fg-color--dark: #1b1b1b;
+
+  /* Text on primary */
+  --md-primary-bg-color: #f5f5f5;
+  --md-primary-bg-color--light: #ffffff;
+
+  /* Accent */
+  --md-accent-fg-color: #ffffff;
+
+  /* Page */
+  --md-default-bg-color: #1e1e1e;
+  --md-default-fg-color: #e6e6e6;
+  --md-default-fg-color--light: #b0b0b0;
+}
+
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #252525;
+  color: #f5f5f5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.30);
+}
+
+
+/* Header links / icons */
+
+[data-md-color-scheme="slate"] .md-header__button,
+[data-md-color-scheme="slate"] .md-header__title,
+[data-md-color-scheme="slate"] .md-header__topic {
+  color: #f5f5f5;
+}
+
+
+/* ---------------------------------------------------------
+   Navigation tabs
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #252525;
+  color: #f5f5f5;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: #bdbdbd;
+}
+
+
+[data-md-color-scheme="slate"] .md-tabs__link--active {
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Search
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] .md-search__form {
+  background-color: #333333;
+}
+
+
+[data-md-color-scheme="slate"] .md-search__input {
+  color: #f5f5f5;
+}
+
+
+[data-md-color-scheme="slate"] .md-search__icon {
+  color: #bdbdbd;
+}
+
+
+/* ---------------------------------------------------------
+   Sidebar
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] .md-sidebar {
+  background-color: #1e1e1e;
+}
+
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #bdbdbd;
+}
+
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #d0d0d0;
+}
+
+
+/* ---------------------------------------------------------
+   Main content
+   --------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] .md-main {
+  background-color: #1e1e1e;
+}c
