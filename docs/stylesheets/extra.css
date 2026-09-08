@@ -1,240 +1,473 @@
 /* =========================================================
+   GitBook-inspired theme for MkDocs Material
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Design tokens
+   --------------------------------------------------------- */
+
+:root {
+  --gb-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --gb-font-code: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono",
+    Menlo, monospace;
+
+  /* Accent (GitBook blue) */
+  --gb-accent: #3884ff;
+  --gb-accent-dark: #1f6feb;
+
+  /* Radii */
+  --gb-radius-sm: 6px;
+  --gb-radius-md: 8px;
+  --gb-radius-lg: 12px;
+
+  /* Layout */
+  --md-text-font: var(--gb-font);
+  --md-code-font: var(--gb-font-code);
+}
+
+/* Slightly wider, more breathing room like GitBook */
+.md-grid {
+  max-width: 68rem;
+}
+
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.72;
+}
+
+/* =========================================================
    LIGHT THEME
    ========================================================= */
 
 [data-md-color-scheme="default"] {
-  /* Primary */
-  --md-primary-fg-color: #f3f4f6;
+  --md-primary-fg-color: #ffffff;
   --md-primary-fg-color--light: #ffffff;
-  --md-primary-fg-color--dark: #e5e7eb;
+  --md-primary-fg-color--dark: #f2f3f5;
+  --md-primary-bg-color: #1a1f27;
+  --md-primary-bg-color--light: #626b7a;
 
-  /* Text on primary */
-  --md-primary-bg-color: #212121;
-  --md-primary-bg-color--light: #424242;
+  --md-accent-fg-color: var(--gb-accent);
+  --md-accent-fg-color--transparent: rgba(56, 132, 255, 0.1);
 
-  /* Accent */
-  --md-accent-fg-color: #212121;
-
-  /* Page */
   --md-default-bg-color: #ffffff;
-  --md-default-fg-color: #212121;
-  --md-default-fg-color--light: #555555;
+  --md-default-fg-color: #1a1f27;
+  --md-default-fg-color--light: #626b7a;
+  --md-default-fg-color--lighter: #969ca8;
+  --md-default-fg-color--lightest: #eff1f3;
+
+  --md-typeset-a-color: var(--gb-accent-dark);
+
+  --md-code-bg-color: #f6f7f9;
+  --md-code-fg-color: #2f363d;
+
+  --gb-border: #e6e8eb;
+  --gb-sidebar-bg: #ffffff;
+  --gb-hover-bg: #f4f5f7;
+  --gb-active-bg: rgba(56, 132, 255, 0.1);
+  --gb-muted: #626b7a;
 }
-
-
-/* ---------------------------------------------------------
-   Header
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="default"] .md-header {
-  background-color: #f3f4f6;
-  color: #212121;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-}
-
-
-/* Header links / icons */
-
-[data-md-color-scheme="default"] .md-header__button,
-[data-md-color-scheme="default"] .md-header__title,
-[data-md-color-scheme="default"] .md-header__topic {
-  color: #212121;
-}
-
-
-/* ---------------------------------------------------------
-   Navigation tabs
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="default"] .md-tabs {
-  background-color: #f3f4f6;
-  color: #212121;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-
-[data-md-color-scheme="default"] .md-tabs__link {
-  color: #555555;
-}
-
-
-[data-md-color-scheme="default"] .md-tabs__link--active {
-  color: #000000;
-}
-
-
-/* ---------------------------------------------------------
-   Search
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="default"] .md-search__form {
-  background-color: #ffffff;
-}
-
-
-[data-md-color-scheme="default"] .md-search__input {
-  color: #212121;
-}
-
-
-[data-md-color-scheme="default"] .md-search__icon {
-  color: #555555;
-}
-
-
-/* ---------------------------------------------------------
-   Sidebar
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="default"] .md-sidebar {
-  background-color: #fafafa;
-}
-
-
-[data-md-color-scheme="default"] .md-nav__link {
-  color: #555555;
-}
-
-
-[data-md-color-scheme="default"] .md-nav__link--active {
-  color: #212121;
-}
-
-
-/* ---------------------------------------------------------
-   Links
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="default"] .md-typeset a {
-  color: #333333;
-}
-
-
-/* ---------------------------------------------------------
-   Main content
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="default"] .md-main {
-  bakground-color: #ffffff;
-}
-
 
 /* =========================================================
    DARK THEME
    ========================================================= */
 
 [data-md-color-scheme="slate"] {
-  /* Primary */
-  --md-primary-fg-color: #252525;
-  --md-primary-fg-color--light: #333333;
-  --md-primary-fg-color--dark: #1b1b1b;
+  --md-hue: 222;
 
-  /* Text on primary */
-  --md-primary-bg-color: #f5f5f5;
-  --md-primary-bg-color--light: #ffffff;
+  --md-primary-fg-color: #14161a;
+  --md-primary-fg-color--light: #1c1f24;
+  --md-primary-fg-color--dark: #0f1114;
+  --md-primary-bg-color: #e8eaed;
+  --md-primary-bg-color--light: #a5abb5;
 
-  /* Accent */
-  --md-accent-fg-color: #ffffff;
+  --md-accent-fg-color: var(--gb-accent);
+  --md-accent-fg-color--transparent: rgba(56, 132, 255, 0.16);
 
-  /* Page */
-  --md-default-bg-color: #1e1e1e;
-  --md-default-fg-color: #e6e6e6;
-  --md-default-fg-color--light: #b0b0b0;
+  --md-default-bg-color: #14161a;
+  --md-default-fg-color: #e3e5e8;
+  --md-default-fg-color--light: #9aa1ac;
+  --md-default-fg-color--lighter: #6b7280;
+  --md-default-fg-color--lightest: #2a2e35;
+
+  --md-typeset-a-color: #6ba5ff;
+
+  --md-code-bg-color: #1c1f24;
+  --md-code-fg-color: #d6d9dd;
+
+  --gb-border: #262a30;
+  --gb-sidebar-bg: #14161a;
+  --gb-hover-bg: #1e2127;
+  --gb-active-bg: rgba(56, 132, 255, 0.16);
+  --gb-muted: #9aa1ac;
 }
 
-
-/* ---------------------------------------------------------
+/* =========================================================
    Header
-   --------------------------------------------------------- */
+   ========================================================= */
 
-[data-md-color-scheme="slate"] .md-header {
-  background-color: #252525;
-  color: #f5f5f5;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.30);
+.md-header {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-default-fg-color);
+  box-shadow: none;
+  border-bottom: 1px solid var(--gb-border);
 }
 
-
-/* Header links / icons */
-
-[data-md-color-scheme="slate"] .md-header__button,
-[data-md-color-scheme="slate"] .md-header__title,
-[data-md-color-scheme="slate"] .md-header__topic {
-  color: #f5f5f5;
+.md-header--shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-
-/* ---------------------------------------------------------
-   Navigation tabs
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="slate"] .md-tabs {
-  background-color: #252525;
-  color: #f5f5f5;
-  border-bottom: 1px solid #3a3a3a;
+.md-header__button,
+.md-header__title,
+.md-header__topic {
+  color: var(--md-default-fg-color);
 }
 
-
-[data-md-color-scheme="slate"] .md-tabs__link {
-  color: #bdbdbd;
+.md-header__button.md-logo img {
+  border-radius: var(--gb-radius-sm);
 }
 
-
-[data-md-color-scheme="slate"] .md-tabs__link--active {
-  color: #ffffff;
+.md-header__title {
+  font-weight: 600;
 }
 
+/* =========================================================
+   Search — rounded pill like GitBook
+   ========================================================= */
 
-/* ---------------------------------------------------------
-   Search
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="slate"] .md-search__form {
-  background-color: #333333;
+.md-search__form {
+  background-color: var(--gb-hover-bg);
+  border: 1px solid var(--gb-border);
+  border-radius: var(--gb-radius-md);
+  box-shadow: none;
+  transition: border-color 0.15s, background-color 0.15s;
 }
 
-
-[data-md-color-scheme="slate"] .md-search__input {
-  color: #f5f5f5;
+.md-search__form:hover,
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  background-color: var(--md-default-bg-color);
+  border-color: var(--gb-accent);
+  box-shadow: 0 0 0 3px var(--md-accent-fg-color--transparent);
 }
 
-
-[data-md-color-scheme="slate"] .md-search__icon {
-  color: #bdbdbd;
+.md-search__input {
+  color: var(--md-default-fg-color);
 }
 
-
-/* ---------------------------------------------------------
-   Sidebar
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="slate"] .md-sidebar {
-  background-color: #1e1e1e;
+.md-search__input::placeholder {
+  color: var(--md-default-fg-color--lighter);
 }
 
-
-[data-md-color-scheme="slate"] .md-nav__link {
-  color: #bdbdbd;
+.md-search__icon {
+  color: var(--md-default-fg-color--light);
 }
 
-
-[data-md-color-scheme="slate"] .md-nav__link--active {
-  color: #ffffff;
+.md-search__output {
+  border-radius: var(--gb-radius-md);
 }
 
-
-/* ---------------------------------------------------------
-   Links
-   --------------------------------------------------------- */
-
-[data-md-color-scheme="slate"] .md-typeset a {
-  color: #d0d0d0;
+@media screen and (min-width: 60em) {
+  .md-search__form {
+    background-color: var(--gb-hover-bg);
+  }
 }
 
+/* =========================================================
+   Sidebar navigation
+   ========================================================= */
 
-/* ---------------------------------------------------------
-   Main content
-   --------------------------------------------------------- */
+.md-sidebar {
+  background-color: var(--gb-sidebar-bg);
+}
 
-[data-md-color-scheme="slate"] .md-main {
-  background-color: #1e1e1e;
-}c
+.md-nav {
+  font-size: 0.72rem;
+}
+
+/* "My Notes" sidebar heading (mobile / logo row) */
+.md-nav--primary > .md-nav__title {
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+  padding-bottom: 0.6rem;
+  box-shadow: none;
+}
+
+@media screen and (min-width: 76.25em) {
+  /* Hide the redundant repeated site title above the tree on desktop */
+  .md-sidebar--primary .md-nav--primary > .md-nav__title {
+    display: none;
+  }
+
+  .md-sidebar--primary .md-nav--primary > .md-nav__list {
+    padding-top: 0.4rem;
+  }
+}
+
+/* Section group labels — keep original casing, just bold + muted */
+.md-nav--primary .md-nav__item--section > .md-nav__link,
+.md-nav--primary .md-nav__item--section > label.md-nav__link {
+  color: var(--gb-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+/* First section shouldn't get an extra top gap */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav__link {
+  margin-top: 0;
+}
+
+.md-nav__link {
+  color: var(--md-default-fg-color--light);
+  border-radius: var(--gb-radius-sm);
+  padding: 0.32rem 0.5rem;
+  margin: 0.05rem 0;
+  transition: background-color 0.12s, color 0.12s;
+}
+
+.md-nav__link:hover,
+.md-nav__link:focus {
+  color: var(--md-default-fg-color);
+  background-color: var(--gb-hover-bg);
+}
+
+.md-nav__link--active,
+.md-nav__link--active:hover {
+  color: var(--gb-accent-dark);
+  background-color: var(--gb-active-bg);
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav__link--active:hover {
+  color: #8bb8ff;
+}
+
+.md-nav__item .md-nav__link--active {
+  color: var(--gb-accent-dark);
+}
+
+/* Nested nav indentation guide */
+@media screen and (min-width: 76.25em) {
+  .md-nav__item--nested .md-nav .md-nav {
+    border-left: 1px solid var(--gb-border);
+    margin-left: 0.6rem;
+    padding-left: 0.35rem;
+  }
+}
+
+/* Table of contents (right sidebar) */
+.md-nav--secondary .md-nav__title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gb-muted);
+  box-shadow: none;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  background-color: transparent;
+  color: var(--gb-accent-dark);
+}
+
+.md-sidebar--secondary .md-nav__list .md-nav__list {
+  padding-left: 0.6rem;
+}
+
+/* =========================================================
+   Content typography
+   ========================================================= */
+
+.md-content {
+  background-color: var(--md-default-bg-color);
+}
+
+.md-typeset h1 {
+  color: var(--md-default-fg-color);
+  font-weight: 800;
+  font-size: 1.85rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  margin-top: 1.8em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--gb-border);
+}
+
+.md-typeset h3 {
+  font-weight: 650;
+  font-size: 1.05rem;
+  margin-top: 1.6em;
+}
+
+.md-typeset h4 {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* subtitle paragraph directly after H1 */
+.md-typeset h1 + p {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.95rem;
+}
+
+.md-typeset a {
+  color: var(--md-typeset-a-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* =========================================================
+   Code
+   ========================================================= */
+
+.md-typeset code {
+  background-color: var(--md-code-bg-color);
+  border: 1px solid var(--gb-border);
+  border-radius: var(--gb-radius-sm);
+  padding: 0.1em 0.35em;
+  font-size: 0.84em;
+}
+
+.md-typeset pre > code {
+  border: none;
+  padding: 0.9rem 1.1rem;
+}
+
+.md-typeset .highlight,
+.md-typeset pre {
+  border-radius: var(--gb-radius-md);
+}
+
+.md-typeset .highlight > pre > code,
+.md-typeset > pre > code {
+  border: 1px solid var(--gb-border);
+  border-radius: var(--gb-radius-md);
+}
+
+.md-clipboard {
+  color: var(--md-default-fg-color--lighter);
+}
+
+.md-typeset .highlight:hover .md-clipboard {
+  color: var(--md-default-fg-color--light);
+}
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--gb-border);
+  border-radius: var(--gb-radius-md);
+  overflow: hidden;
+  font-size: 0.78rem;
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--gb-hover-bg);
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  border-bottom: 1px solid var(--gb-border);
+}
+
+/* =========================================================
+   Admonitions / callouts — GitBook "hint" style
+   ========================================================= */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--gb-border);
+  border-left-width: 3px;
+  border-radius: var(--gb-radius-md);
+  box-shadow: none;
+  font-size: 0.78rem;
+  background-color: var(--gb-hover-bg);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: transparent;
+  font-weight: 600;
+}
+
+/* =========================================================
+   Blockquote
+   ========================================================= */
+
+.md-typeset blockquote {
+  border-left: 3px solid var(--gb-border);
+  color: var(--md-default-fg-color--light);
+}
+
+/* =========================================================
+   Buttons / footer / misc
+   ========================================================= */
+
+.md-typeset .md-button {
+  border-radius: var(--gb-radius-md);
+  border-color: var(--gb-accent);
+  color: var(--gb-accent-dark);
+  font-weight: 600;
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--gb-accent);
+  border-color: var(--gb-accent);
+  color: #fff;
+}
+
+.md-footer {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-default-fg-color--light);
+  border-top: 1px solid var(--gb-border);
+}
+
+.md-footer-meta {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+.md-footer__link {
+  color: var(--md-default-fg-color--light);
+}
+
+.md-footer__link:hover {
+  color: var(--md-default-fg-color);
+}
+
+/* Next/prev nav buttons */
+.md-footer__inner {
+  padding: 0.6rem 0;
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gb-border) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--gb-border);
+  border-radius: 4px;
+}
