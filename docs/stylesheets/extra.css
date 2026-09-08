@@ -209,27 +209,54 @@
   }
 }
 
+/* Material pulls a section's child list 0.6rem to the left of its label and
+   drops a divider between every top-level item — undo both so the section
+   label and its pages share one left edge, GitBook-style. */
+.md-nav--primary .md-nav__item {
+  border-top: none;
+}
+
+.md-nav--primary .md-nav__item--section {
+  margin: 0.9rem 0 0.15rem;
+}
+
+.md-nav--primary .md-nav__item--section:first-child {
+  margin-top: 0.2rem;
+}
+
+.md-nav--primary .md-nav__item--section > .md-nav {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Section group labels — keep original casing, just bold + muted */
 .md-nav--primary .md-nav__item--section > .md-nav__link,
 .md-nav--primary .md-nav__item--section > label.md-nav__link {
   color: var(--gb-muted);
-  font-size: 0.72rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  text-transform: none;
-  letter-spacing: 0;
-  margin-top: 1rem;
-  margin-bottom: 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.1rem;
+  padding: 0.3rem 0.55rem;
 }
 
-/* First section shouldn't get an extra top gap */
-.md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav__link {
-  margin-top: 0;
+/* With navigation.indexes the section label links to the section's index page —
+   don't let the "active" state paint a full highlight bar on the heading. */
+.md-nav--primary .md-nav__item--section > .md-nav__link.md-nav__link--active,
+.md-nav--primary
+  .md-nav__item--section
+  > .md-nav__container
+  > .md-nav__link--active {
+  background-color: transparent;
+  color: var(--gb-muted);
+  font-weight: 700;
 }
 
-.md-nav__link {
+.md-nav--primary .md-nav__link {
   color: var(--md-default-fg-color--light);
   border-radius: var(--gb-radius-sm);
-  padding: 0.32rem 0.5rem;
+  padding: 0.34rem 0.55rem;
   margin: 0.05rem 0;
   transition: background-color 0.12s, color 0.12s;
 }

@@ -1,4 +1,4 @@
-site_name: My Notes
+site_name: Linux Notes
 site_url: https://nhattran02.github.io/my-notes
 
 repo_name: nhattran02/my-notes
@@ -58,8 +58,21 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  - Linux:
-      - linux/index.md
+  - RZ/G2L SMARC:
+      - g2l/index.md
+      - Board setup: g2l/setup.md
+      - Boot modes & flashing: g2l/boot.md
+      - Yocto BSP build: g2l/yocto.md
+      - Kernel & Device Tree: g2l/kernel.md
+      - Peripherals: g2l/peripherals.md
+      - Cortex-M33 / remoteproc: g2l/cm33.md
 
-  - Renesas:
-      - renesas/index.md
+  - RZ/V2N EVK:
+      - v2n/index.md
+      - Board setup: v2n/setup.md
+      - Boot modes & flashing: v2n/boot.md
+      - Yocto BSP build: v2n/yocto.md
+      - DRP-AI development: v2n/drpai.md
+      - Peripherals: v2n/peripherals.md
+
+  
