@@ -1,4 +1,4 @@
-# Boot modes & flashing
+# Flashing the bootloader
 
 ## Inputs
 
@@ -22,53 +22,69 @@ RZ/G2L Evaluation Board Kit **PMIC version**:
 ## Boot mode switches
 
 Configure **SW11** to flash bootloader like below
+<div align="center">
 
-![Boot mode switches](../imgs/g2l_boot_sw.png)
+![Boot mode switches](../imgs/g2l_scif_boot_sw.png)
 
+</div>
 
-`SW1` on the SoM selects the boot source (see the SMARC EVK user manual for the
-exact bit pattern of your board revision):
-
-| Mode          | Use                                       |
-| ------------- | ----------------------------------------- |
-| eSD           | boot from microSD on the carrier          |
-| eMMC          | boot from on-module eMMC                  |
-| QSPI          | boot from serial NOR (factory default)    |
-| SCIF download | UART boot — used to flash the bootloaders |
-
-## Boot chain
-
+## Flashing
+**1.Flash_Writer**
 ```
-BootROM → bl2 (TF-A) → fip (bl31 + U-Boot) → Linux kernel + DTB
+SCIF Download mode 
+(C) Renesas Electronics Corp.
+-- Load Program to SystemRAM ---------------
+please send !
 ```
+File -> Sendfile (**Flash_Writer_SCIF_RZG2L_SMARC_PMIC_DDR4_2GB_1PCS.mot**)
 
-## Flashing the bootloader (SCIF download mode)
-
-1. Set `SW1` to **SCIF download**, power-cycle.
-2. Send the `Flash_Writer_SCIF_*.mot` binary via the serial terminal
-   (ASCII / plain text send).
-3. At the `>` prompt:
-
-```text
+**2.BL2**
+```
 >XLS2
+===== Qspi writing of RZ/G2 Board Command =============
+Load Program to Spiflash
+Writes to any of SPI address.
+Micron : MT25QU512
+Program Top Address & Qspi Save Address
 ===== Please Input Program Top Address ============
-Please Input : H'11E00
+ Please Input : H'11E00
 ===== Please Input Qspi Save Address ===
-Please Input : H'00000
-# send bl2_bp-smarc-rzg2l_pmic.srec
-
+ Please Input : H'00000
+Work RAM(H'50000000-H'53FFFFFF) Clear....
+please send ! ('.' & CR stop load)
+```
+File -> Sendfile (**bl2_bp-smarc-rzg2l_pmic.srec**)
+**3.TFA**
+```
 >XLS2
-Please Input : H'00000
-Please Input : H'1D200
-# send fip-smarc-rzg2l_pmic.srec
+===== Qspi writing of RZ/G2 Board Command =============
+Load Program to Spiflash
+Writes to any of SPI address.
+Micron : MT25QU512
+Program Top Address & Qspi Save Address
+===== Please Input Program Top Address ============
+ Please Input : H'00000
+===== Please Input Qspi Save Address ===
+ Please Input : H'1D200
+Work RAM(H'50000000-H'53FFFFFF) Clear....
+please send ! ('.' & CR stop load)
 ```
+File -> Sendfile (**fip-smarc-rzg2l_pmic.srec**)
+<div align="center">
 
-4. Set `SW1` back to **QSPI**, power-cycle.
+![Boot mode switches](../imgs/g2l_boot_addrs.png)
 
-## U-Boot environment
+</div>
 
-```text
-setenv bootargs 'console=ttySC0,115200 root=/dev/mmcblk1p2 rw rootwait'
-setenv bootcmd 'mmc dev 1; fatload mmc 1:1 0x48080000 Image; fatload mmc 1:1 0x48000000 r9a07g044l2-smarc.dtb; booti 0x48080000 - 0x48000000'
-saveenv
-```
+## Boot
+
+Now all bootloader files are loaded => Change SW11 to normal boot and reboot the
+board. You should see something like
+
+<div align="center">
+
+![Boot mode switches](../imgs/g2l_normal_boot_sw.png)
+
+![Boot mode switches](../imgs/g2l_normal_boot_success.png)
+
+</div>
