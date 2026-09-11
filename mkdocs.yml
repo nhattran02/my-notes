@@ -59,7 +59,7 @@ nav:
   - Home: index.md
 
   - RZ/G2L SMARC:
-      - g2l/000index.md
+      - g2l/index.md
       - Boot modes & flash bootloader: g2l/001boot.md
       - Yocto BSP build: g2l/yocto.md
       - Kernel & Device Tree: g2l/kernel.md
