@@ -23,7 +23,7 @@ RZ/G2L Evaluation Board Kit **PMIC version**:
 
 Configure **SW11** to flash bootloader like below
 
-![Boot mode switches](../../imgs/g2l_boot_sw.png)
+![Boot mode switches](../imgs/g2l_boot_sw.png)
 
 
 `SW1` on the SoM selects the boot source (see the SMARC EVK user manual for the
