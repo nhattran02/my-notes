@@ -61,8 +61,8 @@ nav:
 
   - RZ/G2L SMARC:
       - g2l/index.md
-      - Boot modes & flash bootloader: g2l/001boot.md
-      - Yocto BSP build: g2l/yocto.md
+      - Flash bootloader: g2l/001boot.md
+      - TFTP NFS Booting: g2l/002nfs.md
       - Kernel & Device Tree: g2l/kernel.md
       - Peripherals: g2l/peripherals.md
       - Cortex-M33 / remoteproc: g2l/cm33.md

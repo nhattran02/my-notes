@@ -19,7 +19,7 @@ RZ/G2L Evaluation Board Kit **PMIC version**:
 - fip-smarc-rzg2l_pmic.srec (boot loader)
 
 
-## Boot mode switches
+## Boot mode
 
 Configure **SW11** to flash bootloader like below
 <div align="center" markdown="1">
