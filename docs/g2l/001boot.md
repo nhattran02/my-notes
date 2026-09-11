@@ -22,7 +22,7 @@ RZ/G2L Evaluation Board Kit **PMIC version**:
 ## Boot mode switches
 
 Configure **SW11** to flash bootloader like below
-<div align="center">
+<div align="center" markdown="1">
 
 ![Boot mode switches](../imgs/g2l_scif_boot_sw.png)
 
@@ -70,7 +70,7 @@ Work RAM(H'50000000-H'53FFFFFF) Clear....
 please send ! ('.' & CR stop load)
 ```
 File -> Sendfile (**fip-smarc-rzg2l_pmic.srec**)
-<div align="center">
+<div align="center" markdown="1">
 
 ![Boot mode switches](../imgs/g2l_boot_addrs.png)
 
@@ -81,7 +81,7 @@ File -> Sendfile (**fip-smarc-rzg2l_pmic.srec**)
 Now all bootloader files are loaded => Change SW11 to normal boot and reboot the
 board. You should see something like
 
-<div align="center">
+<div align="center" markdown="1">
 
 ![Boot mode switches](../imgs/g2l_normal_boot_sw.png)
 
