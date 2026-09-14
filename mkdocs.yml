@@ -63,16 +63,10 @@ nav:
       - g2l/index.md
       - Flash bootloader: g2l/001boot.md
       - TFTP NFS Booting: g2l/002nfs.md
-      - Kernel & Device Tree: g2l/kernel.md
-      - Peripherals: g2l/peripherals.md
-      - Cortex-M33 / remoteproc: g2l/cm33.md
 
   - RZ/V2N EVK:
       - v2n/index.md
-      - Board setup: v2n/setup.md
-      - Boot modes & flashing: v2n/boot.md
-      - Yocto BSP build: v2n/yocto.md
-      - DRP-AI development: v2n/drpai.md
-      - Peripherals: v2n/peripherals.md
 
+  - RZ/G3S EVK:
+      - g3s/index.md
   
