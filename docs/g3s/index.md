@@ -30,3 +30,12 @@ arch/arm64/boot/dts/renesas/rzg3s-smarc-switches.h
 ```
 arch/arm64/boot/dts/renesas/rz-smarc-pmod1-type-3a.dtsi
 ```
+
+Documentations:
+```
+Documentation/devicetree/bindings/serial/renesas,scif.yaml
+```
+
+```
+Documentation/devicetree/bindings/serial/serial.yaml
+```
