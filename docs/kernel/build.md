@@ -6,6 +6,7 @@ Building the kernel from a git tree, outside Yocto. Much faster than `bitbake` f
 
 ```bash
 export KSRC=~/work/rz_linux-cip                 # kernel tree
+export BSP_DIR=~/yocto/rzg2l_vlp_v3.0.x         # Yocto BSP (to read the recipe / .config)
 export SDK_DIR=/opt/poky/3.1.x                  # installed Yocto SDK
 export DTB=renesas/r9a07g044l2-smarc.dtb        # see table below
 export JOBS=$(nproc)
