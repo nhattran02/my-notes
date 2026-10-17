@@ -128,3 +128,4 @@ nav:
       - Serial console: debug/serial.md
       - Network & file transfer: debug/network.md
       - Peripherals from user space: debug/peripherals.md
+      - Kernel debugging: debug/kernel-debug.md
