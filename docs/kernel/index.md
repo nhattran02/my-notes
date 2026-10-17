@@ -8,3 +8,4 @@ Working with the RZ Linux kernel directly: building outside Yocto, fast test loo
 | [Fast edit–test loop](fast-iteration.md) | Deploy script for testing kernel/DT changes in under a minute |
 | [Kernel config](config.md) | Finding, changing and saving config options |
 | [Device tree](device-tree.md) | Reading, modifying and debugging the board device tree |
+| [Kernel module](module.md) | Module and platform driver templates, build and load |
