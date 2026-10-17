@@ -126,3 +126,4 @@ nav:
   - Debug & Tools:
       - debug/index.md
       - Serial console: debug/serial.md
+      - Network & file transfer: debug/network.md
