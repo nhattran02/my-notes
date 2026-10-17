@@ -116,3 +116,7 @@ nav:
       - Device tree: kernel/device-tree.md
       - Kernel module: kernel/module.md
       - Patches: kernel/patches.md
+
+  - U-Boot:
+      - uboot/index.md
+      - Environment presets: uboot/env-presets.md
