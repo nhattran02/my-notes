@@ -104,3 +104,4 @@ nav:
       - Build the BSP: yocto/build-bsp.md
       - Build output: yocto/deploy-output.md
       - BitBake commands: yocto/bitbake.md
+      - Custom layer & bbappend: yocto/custom-layer.md

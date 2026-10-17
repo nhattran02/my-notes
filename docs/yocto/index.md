@@ -8,3 +8,4 @@ Notes on building the Renesas RZ BSP with Yocto: preparing the host, building im
 | [Build the BSP](build-bsp.md) | Fresh build of a BSP release |
 | [Build output](deploy-output.md) | Finding `Image`, dtb, rootfs, bootloaders after a build |
 | [BitBake commands](bitbake.md) | Daily rebuild / inspect commands |
+| [Custom layer & bbappend](custom-layer.md) | Adding my own recipes, patches, kernel config |
