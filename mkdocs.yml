@@ -106,3 +106,4 @@ nav:
       - BitBake commands: yocto/bitbake.md
       - Custom layer & bbappend: yocto/custom-layer.md
       - devtool: yocto/devtool.md
+      - SDK: yocto/sdk.md

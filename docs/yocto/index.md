@@ -10,3 +10,4 @@ Notes on building the Renesas RZ BSP with Yocto: preparing the host, building im
 | [BitBake commands](bitbake.md) | Daily rebuild / inspect commands |
 | [Custom layer & bbappend](custom-layer.md) | Adding my own recipes, patches, kernel config |
 | [devtool](devtool.md) | Editing a recipe's source (kernel, U-Boot) and turning it into patches |
+| [SDK](sdk.md) | Cross-compiling outside Yocto |
