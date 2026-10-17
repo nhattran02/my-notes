@@ -120,3 +120,4 @@ nav:
   - U-Boot:
       - uboot/index.md
       - Environment presets: uboot/env-presets.md
+      - U-Boot commands: uboot/commands.md
