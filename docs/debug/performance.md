@@ -115,7 +115,7 @@ dmesg | grep -E "Run /sbin/init|Freeing unused kernel memory"
 Add `initcall_debug` to `bootargs` to see the duration of every driver init (see [Kernel debugging](kernel-debug.md)):
 
 ```bash
-dmesg | grep "initcall" | sort -t' ' -k8 -n -r | head
+dmesg | grep " returned .* after " | sed 's/.* after \([0-9]*\) usecs/\1 &/' | sort -n -r | head
 ```
 
 ## Profiling with perf

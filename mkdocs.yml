@@ -86,6 +86,8 @@ markdown_extensions:
 nav:
   - Home: index.md
 
+  - Cheatsheet: cheatsheet.md
+
   - RZ/G2L SMARC:
       - g2l/index.md
       - Flash bootloader: g2l/001boot.md
