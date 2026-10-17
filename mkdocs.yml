@@ -114,3 +114,4 @@ nav:
       - Fast edit–test loop: kernel/fast-iteration.md
       - Kernel config: kernel/config.md
       - Device tree: kernel/device-tree.md
+      - Kernel module: kernel/module.md
