@@ -103,3 +103,4 @@ nav:
       - Host setup: yocto/host-setup.md
       - Build the BSP: yocto/build-bsp.md
       - Build output: yocto/deploy-output.md
+      - BitBake commands: yocto/bitbake.md
