@@ -105,3 +105,4 @@ nav:
       - Build output: yocto/deploy-output.md
       - BitBake commands: yocto/bitbake.md
       - Custom layer & bbappend: yocto/custom-layer.md
+      - devtool: yocto/devtool.md
