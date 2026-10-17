@@ -9,3 +9,4 @@ Working with the RZ Linux kernel directly: building outside Yocto, fast test loo
 | [Kernel config](config.md) | Finding, changing and saving config options |
 | [Device tree](device-tree.md) | Reading, modifying and debugging the board device tree |
 | [Kernel module](module.md) | Module and platform driver templates, build and load |
+| [Patches](patches.md) | Creating, checking and applying patches |

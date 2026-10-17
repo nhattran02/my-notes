@@ -250,7 +250,7 @@ MODULE_DESCRIPTION("Platform driver template");
 !!! note
     `.remove` returns `int` in 5.10 and 6.1 kernels. From 6.11 on, platform drivers use `.remove` returning `void` (temporarily `.remove_new` in 6.3–6.10). Adjust to the kernel version.
 
-Matching device tree node (see [Device tree](device-tree.md)):
+Matching device tree node (see [Device tree](device-tree.md)). The address, IRQ, clock and reset values here are placeholders: take them from the hardware manual or from the SoC `.dtsi` node of the peripheral.
 
 ```dts
 / {
@@ -306,21 +306,35 @@ clean:
 
 `hello-mod_1.0.bb`:
 
-```
-SUMMARY = "Hello world kernel module"
-LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
+=== "Dunfell"
 
-inherit module
+    ```
+    SUMMARY = "Hello world kernel module"
+    LICENSE = "GPL-2.0"
+    LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
-SRC_URI = "file://Makefile file://hello.c"
-S = "${WORKDIR}"
+    inherit module
 
-RPROVIDES_${PN} += "kernel-module-hello"
-```
+    SRC_URI = "file://Makefile file://hello.c"
+    S = "${WORKDIR}"
 
-!!! note
-    On Dunfell the license name is `GPL-2.0` with `file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6`, and `RPROVIDES_${PN}`. On Kirkstone and later: `GPL-2.0-only` and `RPROVIDES:${PN}`.
+    RPROVIDES_${PN} += "kernel-module-hello"
+    ```
+
+=== "Kirkstone and later"
+
+    ```
+    SUMMARY = "Hello world kernel module"
+    LICENSE = "GPL-2.0-only"
+    LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
+
+    inherit module
+
+    SRC_URI = "file://Makefile file://hello.c"
+    S = "${WORKDIR}"
+
+    RPROVIDES:${PN} += "kernel-module-hello"
+    ```
 
 Add to the image with `IMAGE_INSTALL_append = " hello-mod"` (Kirkstone+: `IMAGE_INSTALL:append`), and autoload it with `KERNEL_MODULE_AUTOLOAD += "hello"` in the recipe.
 
