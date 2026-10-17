@@ -97,3 +97,7 @@ nav:
 
   - RZ/G3S EVK:
       - g3s/index.md
+
+  - Yocto:
+      - yocto/index.md
+      - Host setup: yocto/host-setup.md
