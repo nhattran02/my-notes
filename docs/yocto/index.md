@@ -5,3 +5,4 @@ Notes on building the Renesas RZ BSP with Yocto: preparing the host, building im
 | Article | When to use it |
 | ------- | -------------- |
 | [Host setup](host-setup.md) | Once per build machine |
+| [Build the BSP](build-bsp.md) | Fresh build of a BSP release |
