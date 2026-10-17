@@ -90,6 +90,7 @@ nav:
       - g2l/index.md
       - Flash bootloader: g2l/001boot.md
       - TFTP NFS Booting: g2l/002nfs.md
+      - SD Card / eMMC Booting: g2l/003sd_emmc.md
 
   - RZ/V2N EVK:
       - v2n/index.md
