@@ -6,3 +6,4 @@ Working with the board once it boots: console, network, peripherals from user sp
 | ------- | -------------- |
 | [Serial console](serial.md) | Connecting to the board's console from Linux, Windows or a VM |
 | [Network & file transfer](network.md) | Static IP, SSH, scp/rsync, NFS mounts, internet through the host |
+| [Peripherals from user space](peripherals.md) | Testing GPIO, I2C, SPI, UART, CAN, ADC, PWM, registers from the shell |

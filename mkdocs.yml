@@ -127,3 +127,4 @@ nav:
       - debug/index.md
       - Serial console: debug/serial.md
       - Network & file transfer: debug/network.md
+      - Peripherals from user space: debug/peripherals.md
