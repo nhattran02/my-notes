@@ -129,3 +129,4 @@ nav:
       - Network & file transfer: debug/network.md
       - Peripherals from user space: debug/peripherals.md
       - Kernel debugging: debug/kernel-debug.md
+      - Performance & system status: debug/performance.md
