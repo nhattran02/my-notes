@@ -1,0 +1,50 @@
+{% if config.theme.logo %}
+  {% set class = "md-nav-top-title" %}
+{% else %}
+  {% set class = "md-nav-top-title md-nav-top-no-icon" %}
+{% endif %}
+<div class="{{ class }}">
+  <a id="md-nav-top-home" href="{{ nav.homepage.url | url }}">
+    {{ config.site_name }}
+  </a>
+  {% if config.theme.nav_top.no_title %}
+    {#- do nothing -#}
+  {% else %}
+    <span>
+      {{ config.site_name }}
+    </span>
+    {% if config.site_description %}
+      <p class="md-nav-top-subtitle">
+        {{ config.site_description }}
+      </p>
+    {% endif %}
+  {% endif %}
+  <div class="md-nav-top-logos md-typeset">
+    {% if config.theme.nav_top %}
+      {% for logo in config.theme.nav_top.logos %}
+        <img src="{{ logo | url }}">
+      {% endfor %}
+    {% endif %}
+    {% if config.theme.nav_top and config.theme.nav_top.btns %}
+      {% for btn in config.theme.nav_top.btns %}
+        {% if btn.new_tab %}
+          {% set target = "_blank" %}
+        {% else %}
+          {% set target = "" %}
+        {% endif %}
+        {% if btn.image %}
+          <a href="{{ btn.url | url }}" target="{{ target }}" >
+            <img src="{{ btn.image | url }}">
+          </a>
+        {% else %}
+          <p>
+            <a class="md-button md-button--primary btn-yellow btn-round btn-small" href="{{ btn.url | url }}" target="{{ target }}" >
+              {{ btn.name }}
+            </a>
+          </p>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    <hr/>
+  </div>
+</div>
