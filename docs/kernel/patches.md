@@ -8,6 +8,7 @@ Creating, checking and applying patches for the kernel (same commands for U-Boot
 export KSRC=~/work/rz_linux-cip
 export BASE=<base-commit>          # commit my work starts from, e.g. the Yocto SRCREV
 export OUT=~/work/patches
+export BSP_DIR=~/yocto/rzg2l_vlp_v3.0.x   # only for moving patches into Yocto
 ```
 
 ## Commit in kernel style
