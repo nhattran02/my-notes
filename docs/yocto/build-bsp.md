@@ -126,10 +126,13 @@ EOF
 
 ### Offline build
 
-The BSP ships the source tarballs of all packages (`oss_pkg`). To build without network access, extract them into `DL_DIR` and disable fetching:
+The BSP ships the source tarballs of all packages (`oss_pkg`, a `.7z` archive). To build without network access, extract it and copy its content into `DL_DIR`, then disable fetching:
 
 ```bash
-tar -xf $BSP_DIR/oss_pkg_rzg_v3.0.x.7z -C ~/yocto/downloads    # or 7z x for .7z
+mkdir -p /tmp/oss_pkg
+7z x $BSP_DIR/oss_pkg_rzg_v3.0.x.7z -o/tmp/oss_pkg
+ls /tmp/oss_pkg                                   # find the directory holding the tarballs
+cp -r /tmp/oss_pkg/<dir>/* ~/yocto/downloads/
 echo 'BB_NO_NETWORK = "1"' >> conf/local.conf
 ```
 
