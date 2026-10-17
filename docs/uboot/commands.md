@@ -124,7 +124,7 @@ fdt addr 0x48000000
 fdt print /chosen
 fdt print /soc/serial@1004b800
 fdt list /
-fdt set /soc/serial@1004b800 status "disabled"
+fdt set /soc/spi@1004b000 status "okay"
 fdt resize 8192                       # make room before adding nodes or applying overlays
 ```
 
