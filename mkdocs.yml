@@ -107,3 +107,7 @@ nav:
       - Custom layer & bbappend: yocto/custom-layer.md
       - devtool: yocto/devtool.md
       - SDK: yocto/sdk.md
+
+  - Kernel & Device Tree:
+      - kernel/index.md
+      - Build the kernel: kernel/build.md
