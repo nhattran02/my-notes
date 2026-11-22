@@ -93,7 +93,6 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tilde
   - toc:
-      permalink: true
       toc_depth: 3
 
 nav:
