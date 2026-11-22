@@ -7,7 +7,6 @@ repo_url: https://github.com/nhattran02/my-notes
 
 theme:
   name: material
-  custom_dir: overrides
 
   features:
     - content.code.annotate
@@ -15,30 +14,41 @@ theme:
     - content.code.select
     - content.tabs.link
     - content.tooltips
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
-    - navigation.prune
     - navigation.top
     - navigation.tracking
     - navigation.footer
     - search.highlight
     - search.suggest
-    - toc.integrate
     - toc.follow
 
-  nav_top:
-    no_title: false
-
+  # Light / dark toggle, styled after the Textual docs:
+  # white header with purple accent in light mode, black header in dark mode.
   palette:
-    primary: custom
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
 
   language: en
 
 copyright: '&copy;2026 Nhat Tran'
 
 extra:
-  header_link: true
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/nhattran02
@@ -46,7 +56,6 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
-  - stylesheets/card.css
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
