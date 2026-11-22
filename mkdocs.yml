@@ -86,49 +86,14 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  - Cheatsheet: cheatsheet.md
-
   - RZ/G2L SMARC:
       - g2l/index.md
       - Flash bootloader: g2l/001boot.md
       - TFTP NFS Booting: g2l/002nfs.md
       - SD Card / eMMC Booting: g2l/003sd_emmc.md
-      - Flash full SD image: g2l/004wic.md
 
   - RZ/V2N EVK:
       - v2n/index.md
 
   - RZ/G3S EVK:
       - g3s/index.md
-
-  - Yocto:
-      - yocto/index.md
-      - Host setup: yocto/host-setup.md
-      - Build the BSP: yocto/build-bsp.md
-      - Build output: yocto/deploy-output.md
-      - BitBake commands: yocto/bitbake.md
-      - Custom layer & bbappend: yocto/custom-layer.md
-      - devtool: yocto/devtool.md
-      - SDK: yocto/sdk.md
-
-  - Kernel & Device Tree:
-      - kernel/index.md
-      - Build the kernel: kernel/build.md
-      - Fast edit–test loop: kernel/fast-iteration.md
-      - Kernel config: kernel/config.md
-      - Device tree: kernel/device-tree.md
-      - Kernel module: kernel/module.md
-      - Patches: kernel/patches.md
-
-  - U-Boot:
-      - uboot/index.md
-      - Environment presets: uboot/env-presets.md
-      - U-Boot commands: uboot/commands.md
-
-  - Debug & Tools:
-      - debug/index.md
-      - Serial console: debug/serial.md
-      - Network & file transfer: debug/network.md
-      - Peripherals from user space: debug/peripherals.md
-      - Kernel debugging: debug/kernel-debug.md
-      - Performance & system status: debug/performance.md
