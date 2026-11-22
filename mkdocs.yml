@@ -85,6 +85,10 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences:
       preserve_tabs: true
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tilde
@@ -95,14 +99,19 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  - RZ/G2L SMARC:
-      - g2l/index.md
-      - Flash bootloader: g2l/001boot.md
-      - TFTP NFS Booting: g2l/002nfs.md
-      - SD Card / eMMC Booting: g2l/003sd_emmc.md
+  # Each top-level entry is a tab in the header bar.
+  - Guides:
+      - guides/index.md
+      - Flash the bootloader: guides/flash-bootloader.md
+      - TFTP / NFS boot: guides/nfs-boot.md
+      - SD card / eMMC boot: guides/sd-emmc-boot.md
 
-  - RZ/V2N EVK:
-      - v2n/index.md
+  - BSP Manual:
+      - bsp/index.md
+      - MTU3 PWM: bsp/mtu3-pwm.md
 
-  - RZ/G3S EVK:
-      - g3s/index.md
+  - Boards:
+      - boards/index.md
+      - RZ/G2L SMARC EVK: boards/rzg2l-smarc.md
+      - RZ/G3S SMARC EVK: boards/rzg3s-smarc.md
+      - RZ/V2N EVK: boards/rzv2n-evk.md
