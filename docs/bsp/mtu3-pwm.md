@@ -1,59 +1,24 @@
-# RZ/G3S SMARC
+# MTU3 PWM
 
-Bring-up and development notes for the Renesas RZ/G3S SMARC Evaluation Board Kit.
-
-Device tree: 
-```
-arch/arm64/boot/dts/renesas/r9a08g045s33-smarc.dts
-```
-
-```
-arch/arm64/boot/dts/renesas/rzg3s-smarc-som.dtsi
-```
-
-```
-arch/arm64/boot/dts/renesas/rzg3s-smarc.dtsi
-```
-
-```
-arch/arm64/boot/dts/renesas/r9a08g045s33.dtsi
-```
-
-```
-arch/arm64/boot/dts/renesas/r9a08g045.dtsi
-```
-
-```
-arch/arm64/boot/dts/renesas/rzg3s-smarc-switches.h
-```
-
-```
-arch/arm64/boot/dts/renesas/rz-smarc-pmod1-type-3a.dtsi
-```
-
-Documentations:
-```
-Documentation/devicetree/bindings/serial/renesas,scif.yaml
-```
-
-```
-Documentation/devicetree/bindings/serial/serial.yaml
-```
-
-## MTU3 PWM channel map (RZ/G3S)
 Driver: `drivers/pwm/pwm-rz-mtu3.c`
 
-Lookup chain:
+The channel map below was written for the **RZ/G3S**.
 
-```
-hwpwm -> rz_mtu3_get_channel() -> channel_data[j] -> ->mtu / ->mtu_comp_pwm -> HW channel
+## Lookup chain
+
+```mermaid
+flowchart LR
+    A["hwpwm<br/>(0..15, sysfs export)"] --> B["rz_mtu3_get_channel()"]
+    B --> C["channel_data[j]<br/>(j = 0..10)"]
+    C --> D["->mtu / ->mtu_comp_pwm"]
+    D --> E["HW channel<br/>(MTU0..MTU7)"]
 ```
 
 - `hwpwm` (0..15): the PWM number seen by the user in sysfs (`export`).
 - `j` (0..10): the index into `channel_data[]` and `channel_map[]`.
 - Do not confuse these two numbers.
 
-1. PWM mode 1
+## PWM mode 1
 
 Each IO pin is an independent PWM.
 
@@ -77,7 +42,7 @@ Register selection rule in mode 1:
 - `base == hwpwm`: pin A, uses TIORH, TGRA (period), TGRB (duty).
 - `base != hwpwm`: pin C, uses TIORL, TGRC (period), TGRD (duty).
 
-2. Complementary PWM
+## Complementary PWM
 
 Each PWM is a bundle of two pin pairs and uses two HW channels.
 
@@ -93,7 +58,7 @@ Notes:
 - `channel_data[7]` and `[8]` both point to MTU3 + MTU4. `[9]` and `[10]` both point to MTU6 + MTU7. They share the same hardware and differ only in which pins are enabled through TOER.
 - The enum name reads as "pair of MTU3/6" _ "pair of MTU4/7".
 
-3. `channel_map[]`
+## `channel_map[]`
 
 ```c
 static const struct rz_mtu3_channel_io_map channel_map[] = {
