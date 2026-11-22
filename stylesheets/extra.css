@@ -1,0 +1,12 @@
+/* Small tweaks on top of the stock Material theme. */
+
+/* Keep register names, paths and commands in table cells on one line. */
+.md-typeset td code {
+  word-break: normal;
+}
+
+/* Light mode: thin line under the white header and tabs so they don't blend into the page. */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
